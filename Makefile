@@ -47,7 +47,7 @@ package: $(PROJECTNAME) $(RESOURCES)
 	mkdir -p $(BUILDDIR)/$(PROJECTNAME).app
 	cp $(PROJECTNAME) $(BUILDDIR)/$(PROJECTNAME).app
 	cp Info.plist $(BUILDDIR)/$(PROJECTNAME).app
-	cp $(RESDIR)/* $(BUILDDIR)/$(PROJECTNAME).app
+	-cp $(RESDIR)/* $(BUILDDIR)/$(PROJECTNAME).app
 
 dist: package $(ZIPNAME)
 	find $(BUILDDIR) -type f -name .DS_Store -print0 | xargs -0 rm
